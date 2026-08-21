@@ -13,6 +13,30 @@ const tableToText = (table) => {
   }).join("\n");
 };
 
+// テーブル要素をMarkdownテーブルに変換する共通関数
+const tableToMarkdown = (table) => {
+  const rows = Array.from(table.rows).map(row =>
+    Array.from(row.cells).map(cell =>
+      cell.innerText.trim().replace(/\n/g, " ").replace(/\|/g, "\\|")
+    )
+  );
+  if (rows.length === 0) return "";
+
+  const colCount = Math.max(...rows.map(row => row.length));
+  const pad = (row) => {
+    const padded = row.slice();
+    while (padded.length < colCount) padded.push("");
+    return padded;
+  };
+
+  const [header, ...body] = rows.map(pad);
+  const headerLine = `| ${header.join(" | ")} |`;
+  const separatorLine = `| ${Array(colCount).fill("---").join(" | ")} |`;
+  const bodyLines = body.map(row => `| ${row.join(" | ")} |`);
+
+  return [headerLine, separatorLine, ...bodyLines].join("\n");
+};
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "copy_table") {
     const table = lastElement ? lastElement.closest("table") : null;
@@ -21,6 +45,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       return;
     }
     copyToClipboard(tableToText(table), "テーブルをコピーしました！");
+
+  } else if (request.action === "copy_table_markdown") {
+    const table = lastElement ? lastElement.closest("table") : null;
+    if (!table) {
+      showToast("テーブルが見つかりませんでした。");
+      return;
+    }
+    copyToClipboard(tableToMarkdown(table), "テーブルをMarkdownでコピーしました！");
 
   } else if (request.action === "copy_all_tables") {
     const allTables = document.querySelectorAll("table");
@@ -33,6 +65,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .join("\n\n");
 
     copyToClipboard(allContent, `${allTables.length} 個のテーブルをコピーしました！`);
+
+  } else if (request.action === "copy_all_tables_markdown") {
+    const allTables = document.querySelectorAll("table");
+    if (allTables.length === 0) {
+      showToast("テーブルが見つかりませんでした。");
+      return;
+    }
+    const allContent = Array.from(allTables)
+      .map(table => tableToMarkdown(table))
+      .join("\n\n");
+
+    copyToClipboard(allContent, `${allTables.length} 個のテーブルをMarkdownでコピーしました！`);
   }
 });
 
