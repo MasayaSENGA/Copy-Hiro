@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>copy guard</title>
+<script>
+  // Typical "copy protection" / "append copyright" scripts, registered at page load (before the content script).
+  const mode = new URLSearchParams(location.search).get('mode');
+  if (mode === 'block') {            // コピー禁止サイト: document bubble listener + oncopy
+    document.addEventListener('copy', e => e.preventDefault());
+    document.oncopy = () => false;
+  } else if (mode === 'append') {    // 出典の自動付記: document capture listener that rewrites the data
+    document.addEventListener('copy', e => {
+      e.preventDefault();
+      e.clipboardData.setData('text/plain', 'PAGE-REWROTE-IT');
+    }, true);
+  } else if (mode === 'window') {    // aggressive: window capture listener that swallows the event
+    window.addEventListener('copy', e => { e.stopImmediatePropagation(); e.preventDefault(); }, true);
+  }
+</script>
+</head>
+<body>
+<table id="g" border="1"><tr><th>保護</th><th>値</th></tr><tr><td>guard</td><td>7</td></tr></table>
+</body>
+</html>

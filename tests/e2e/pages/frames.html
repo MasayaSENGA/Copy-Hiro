@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>frames</title>
+<style>iframe{width:400px;height:150px;border:2px solid #888;margin:4px} body{margin:8px}</style></head>
+<body>
+<table id="outer" border="1"><tr><th>外側</th><th>値</th></tr><tr><td>outer</td><td>1</td></tr></table>
+<p id="top-outside">top outside</p>
+<div>
+<iframe name="same" id="same"></iframe>
+<iframe name="cross" id="cross"></iframe>
+</div>
+<div>
+<iframe name="xsec" id="xsec"></iframe>
+<iframe name="xsecallow" id="xsecallow" allow="clipboard-write"></iframe>
+</div>
+<div>
+<iframe name="srcdoc" id="srcdoc" srcdoc="<!doctype html><meta charset=utf-8><body><table id=t1 border=1><tr><th>枠</th><th>値</th></tr><tr><td>srcdoc</td><td>2</td></tr></table><table id=t2 border=1><tr><td>x</td><td>y</td></tr></table><p id=fout>outside</p></body>"></iframe>
+</div>
+<script>
+  // tag makes iframe URLs unique per page instance (the harness finds OOPIF targets by URL)
+  const tag = (location.search || '?x').slice(1);
+  const p = location.port;
+  const src = (base, f) => base + '/frame-a.html?f=' + f + '&tag=' + encodeURIComponent(tag);
+  document.getElementById('same').src = src('http://localhost:' + p, 'same');
+  document.getElementById('cross').src = src('http://other.test:' + p, 'cross');
+  document.getElementById('xsec').src = src('http://other.localhost:' + p, 'xsec');
+  document.getElementById('xsecallow').src = src('http://other.localhost:' + p, 'xsecallow');
+</script>
+</body>
+</html>

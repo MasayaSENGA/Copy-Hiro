@@ -1,0 +1,27 @@
+{
+  "_comment": "Expected clipboard / toast output for pages/tables.html. Edit here if the output format is changed on purpose.",
+  "tables": {
+    "sales": {
+      "tsv": "商品\t価格\t備考\nりんご\t100\t赤い 甘い\nバナナ\t200\tA|B\nみかん\t300\nぶどう\t400\t皮ごと\t追加列",
+      "md": "| 商品 | 価格 | 備考 |  |\n| --- | --- | --- | --- |\n| りんご | 100 | 赤い 甘い |  |\n| バナナ | 200 | A\\|B |  |\n| みかん | 300 |  |  |\n| ぶどう | 400 | 皮ごと | 追加列 |"
+    },
+    "simple": {
+      "tsv": "A\tB\n1\t2",
+      "md": "| A | B |\n| --- | --- |\n| 1 | 2 |"
+    },
+    "multi": {
+      "tsv": "項目\t説明\n複数行\t1行目 2行目\n空セル\t",
+      "md": "| 項目 | 説明 |\n| --- | --- |\n| 複数行 | 1行目 2行目 |\n| 空セル |  |"
+    }
+  },
+  "all_tables_order": ["sales", "simple", "multi"],
+  "all_tables_separator": "\n\n",
+  "toasts": {
+    "copy_table": "テーブルをコピーしました！",
+    "copy_table_markdown": "テーブルをMarkdownでコピーしました！",
+    "copy_all_tables": "{n} 個のテーブルをコピーしました！",
+    "copy_all_tables_markdown": "{n} 個のテーブルをMarkdownでコピーしました！",
+    "not_found": "テーブルが見つかりませんでした。",
+    "failed": "コピーに失敗しました。"
+  }
+}

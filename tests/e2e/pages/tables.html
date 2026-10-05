@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>tables</title></head>
+<body>
+<h1>コピひろ E2E テストページ</h1>
+<p id="outside">この段落はテーブルの外です。</p>
+<table id="sales" border="1">
+  <thead>
+    <tr><th>商品</th><th>価格</th><th>備考</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>りんご</td><td>100</td><td>赤い<br>甘い</td></tr>
+    <tr><td>バナナ</td><td>200</td><td>A|B</td></tr>
+    <tr><td>みかん</td><td>300</td></tr>
+    <tr><td>  ぶどう  </td><td>400</td><td>皮ごと</td><td>追加列</td></tr>
+  </tbody>
+</table>
+<p>間の段落</p>
+<table id="simple" border="1">
+  <tr><td>A</td><td>B</td></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table>
+<table id="multi" border="1">
+  <tr><th>項目</th><th>説明</th></tr>
+  <tr><td>複数行</td><td><div>1行目</div><div>2行目</div></td></tr>
+  <tr><td>空セル</td><td></td></tr>
+</table>
+</body>
+</html>

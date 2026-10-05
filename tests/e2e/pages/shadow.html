@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>shadow</title></head>
+<body>
+<div id="host"></div>
+<script>
+  const root = document.getElementById('host').attachShadow({mode: 'open'});
+  root.innerHTML = '<table id="st" border="1"><tr><th>影</th><th>値</th></tr><tr><td>shadow</td><td>3</td></tr></table>';
+</script>
+</body>
+</html>

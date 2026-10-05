@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>shadow in cell</title></head>
+<body>
+<table id="sc" border="1">
+  <tr><th>名前</th><th>状態</th></tr>
+  <tr><td>A</td><td><x-badge id="badge"></x-badge></td></tr>
+  <tr><td>B</td><td><x-wrap id="wrap"><b id="slotted">slotted</b></x-wrap></td></tr>
+</table>
+<script>
+  customElements.define('x-badge', class extends HTMLElement {
+    constructor() { super(); this.attachShadow({mode: 'open'}).innerHTML = '<span id="inner" style="padding:4px;background:#cfc">完了</span>'; }
+  });
+  customElements.define('x-wrap', class extends HTMLElement {
+    constructor() { super(); this.attachShadow({mode: 'open'}).innerHTML = '<div id="w" style="padding:2px;border:1px dashed"><slot></slot></div>'; }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>edge cases</title></head>
+<body>
+<h2>colspan / rowspan</h2>
+<table id="span" border="1">
+  <tr><th colspan="2">期間</th><th>価格</th></tr>
+  <tr><td>開始</td><td>終了</td><td>1000</td></tr>
+  <tr><td rowspan="2">A</td><td>x</td><td>1</td></tr>
+  <tr><td>y</td><td>2</td></tr>
+</table>
+<h2>nested</h2>
+<table id="nested" border="1">
+  <tr><th>名前</th><th>内訳</th></tr>
+  <tr><td>セット</td><td><table id="nested-inner" border="1"><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></td></tr>
+</table>
+<h2>empty</h2>
+<table id="empty" border="1" style="min-width:50px;min-height:20px;display:inline-table"></table>
+<h2>hidden</h2>
+<table id="hidden" style="display:none"><tr><td>非表示</td><td>secret</td></tr></table>
+<h2>tab / quote / formula</h2>
+<table id="special" border="1">
+  <tr><th>種別</th><th>値</th></tr>
+  <tr><td>タブ</td><td><pre style="display:inline">x&#9;y</pre></td></tr>
+  <tr><td>引用符</td><td>"quoted</td></tr>
+  <tr><td>数式</td><td>=1+1</td></tr>
+</table>
+</body>
+</html>

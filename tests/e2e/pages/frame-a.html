@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>frame-a</title></head>
+<body>
+<table id="t1" border="1"><tr><th>枠</th><th>値</th></tr><tr><td id="lab">?</td><td>2</td></tr></table>
+<table id="t2" border="1"><tr><td>x</td><td>y</td></tr></table>
+<p id="fout">outside</p>
+<script>document.getElementById('lab').textContent = new URLSearchParams(location.search).get('f');</script>
+</body>
+</html>
