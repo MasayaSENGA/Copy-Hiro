@@ -34,7 +34,7 @@ python tests\e2e\show.py $env:TEMP\copy-hiro-e2e.json
 | 指定 | テストする対象 |
 | --- | --- |
 | （指定なし） | このリポジトリの実行用ファイル（`manifest.json`、`background.js`、`content.js`、`icons/`）。開発中の確認に使います |
-| `--zip dist\copy-hiro-v2.4.zip` | `scripts/package.ps1` で作った**提出用の zip そのもの**。アップロード前の最終確認に使います |
+| `--zip dist\copy-hiro-v2.4.1.zip` | `scripts/package.ps1` で作った**提出用の zip そのもの**。アップロード前の最終確認に使います |
 | `--ext <フォルダ>` | 任意の展開済みフォルダ |
 
 どの場合も、一時フォルダ（`%TEMP%\copy-hiro-e2e`）にコピーしたものを読み込むため、元のファイルは変更されません。

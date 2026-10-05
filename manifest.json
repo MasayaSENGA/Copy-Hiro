@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "コピひろ",
-  "version": "2.4",
+  "version": "2.4.1",
   "description": "Webページの表（テーブル）を右クリックメニューからコピーできます。Excelやスプレッドシートに貼り付けるとセルごとに分かれるタブ区切り（TSV）形式と、Markdown形式に対応しています。ページ上の全テーブルもまとめてコピーできます。",
   "icons": {
     "16": "icons/icon16.png",
