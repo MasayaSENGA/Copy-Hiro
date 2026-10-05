@@ -1,0 +1,644 @@
+/* =========================================================
+   コピひろ — Chrome Web Store graphics (shared styles)
+   すべてローカルフォントのみ使用（Web フォント・ネットワーク不使用）
+   ========================================================= */
+
+:root {
+  /* アイコンから抽出したブランドカラー */
+  --brand-1: #3a7ff2;
+  --brand-2: #2b63d9;
+  --brand-3: #1f48b5;
+  --brand-ink: #173a94;
+  --tint: #eaf1fe;
+
+  --ink: #1c2333;
+  --ink-2: #4a5468;
+  --ink-3: #7a8396;
+  --line: #e3e8f0;
+
+  --font-display: "Noto Sans JP", "BIZ UDPGothic", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-ui: "Segoe UI", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-page: "Noto Sans JP", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-mono: "Consolas", "BIZ UDGothic", "MS Gothic", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1f48b5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- キャンバス ---------- */
+.canvas {
+  position: relative;
+  width: 1280px;
+  height: 800px;
+  overflow: hidden;
+  font-family: var(--font-display);
+  color: #fff;
+  background:
+    radial-gradient(900px 520px at 8% -12%, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(900px 640px at 105% 115%, rgba(8, 26, 90, 0.38), rgba(8, 26, 90, 0) 70%),
+    linear-gradient(155deg, var(--brand-1) 0%, var(--brand-2) 48%, var(--brand-3) 100%);
+}
+
+/* 背景の控えめな装飾リング */
+.canvas .deco {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+}
+
+/* ---------- 見出し帯 ---------- */
+.band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  padding-top: 48px;
+}
+
+.band h1 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 14px rgba(8, 24, 80, 0.18);
+}
+
+.band .sub {
+  margin: 14px 0 0;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* =========================================================
+   ブラウザウィンドウ（汎用モック。実寸の単位で記述し zoom で拡大）
+   ========================================================= */
+.win {
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(10, 30, 80, 0.10),
+    0 4px 14px rgba(6, 22, 70, 0.16),
+    0 26px 64px rgba(6, 22, 70, 0.34);
+  font-family: var(--font-ui);
+  color: #1f1f1f;
+}
+
+.tabstrip {
+  position: relative;
+  height: 38px;
+  background: #dfe5ee;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 12px;
+}
+
+.tab {
+  position: relative;
+  width: 236px;
+  height: 31px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 0 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tab::before,
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+}
+
+.tab::before {
+  left: -8px;
+  background: radial-gradient(circle at 0 0, transparent 7.5px, #fff 8px);
+}
+
+.tab::after {
+  right: -8px;
+  background: radial-gradient(circle at 100% 0, transparent 7.5px, #fff 8px);
+}
+
+.tab .fav {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #5b6b8c, #3d4a66);
+  color: #fff;
+  font: 700 10px/16px var(--font-ui);
+  text-align: center;
+}
+
+.tab .ttl {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab .x {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.newtab {
+  width: 28px;
+  height: 28px;
+  margin: 0 0 2px 12px;
+  display: grid;
+  place-items: center;
+}
+
+.winctl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  display: flex;
+}
+
+.winctl span {
+  width: 44px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.toolbar {
+  height: 44px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 8px;
+  border-bottom: 1px solid #e4e8ee;
+}
+
+.navbtn {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.navbtn.dim svg { opacity: 0.38; }
+
+.omnibox {
+  flex: 1;
+  height: 32px;
+  margin: 0 6px;
+  border-radius: 16px;
+  background: #eef1f6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #1f1f1f;
+  white-space: nowrap;
+}
+
+.omnibox .path { color: #6b7280; }
+
+.page {
+  position: relative;
+  background: #fff;
+  font-family: var(--font-page);
+  color: var(--ink);
+}
+
+/* ---------- サンプルサイト ---------- */
+.site-head {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 28px;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.site-head .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  margin-right: auto;
+}
+
+.site-head .logo i {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #5b6b8c, #3d4a66);
+}
+
+.page h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.page .lead {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* ---------- ページ内の表 ---------- */
+.tbl-wrap {
+  display: inline-block;
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table.data {
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+table.data th {
+  background: #f2f5fa;
+  color: #3a4458;
+  font-weight: 700;
+  text-align: left;
+  padding: 9px 16px;
+  border-bottom: 1px solid #dde3ec;
+  white-space: nowrap;
+}
+
+table.data td {
+  padding: 9px 16px;
+  border-bottom: 1px solid #edf0f4;
+  white-space: nowrap;
+}
+
+table.data tr:last-child td { border-bottom: 0; }
+
+table.data .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+table.data .code {
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- コンテキストメニュー（Chrome ライトテーマ風） ---------- */
+.cmenu {
+  position: absolute;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 0;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.12),
+    0 12px 30px rgba(0, 0, 0, 0.16);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: #1f1f1f;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.cmenu .mi {
+  position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 40px;
+}
+
+.cmenu.sub .mi { padding-left: 18px; }
+
+.cmenu .mi.off { color: #a3a3a3; }
+
+.cmenu .mi.hl { background: #e8ebf0; }
+
+.cmenu .mi .acc {
+  margin-left: auto;
+  padding-left: 28px;
+  color: #6b6b6b;
+}
+
+.cmenu .mi.off .acc { color: #b8b8b8; }
+
+.cmenu .mi .ico {
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.cmenu .mi .chev {
+  margin-left: auto;
+  padding-left: 28px;
+  display: flex;
+}
+
+.cmenu .sep {
+  height: 1px;
+  background: #e2e2e2;
+  margin: 6px 0;
+}
+
+.cursor {
+  position: absolute;
+  z-index: 20;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+/* ---------- トースト（content.js の showToast と同じスタイル） ---------- */
+.toast {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+  white-space: nowrap;
+  z-index: 30;
+}
+
+/* =========================================================
+   表計算ソフト（汎用・ブランドなし）
+   ========================================================= */
+.titlebar {
+  position: relative;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 14px;
+  background: #f3f5f8;
+  font-size: 12px;
+  color: #333;
+  border-bottom: 1px solid #e3e7ed;
+}
+
+.titlebar .appico {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #6c7a96, #47546f);
+  display: grid;
+  place-items: center;
+}
+
+.formula {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e1e5eb;
+  font-size: 12.5px;
+  background: #fff;
+}
+
+.formula .namebox {
+  width: 64px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-right: 1px solid #e1e5eb;
+  color: #333;
+}
+
+.formula .fx {
+  width: 36px;
+  text-align: center;
+  font-style: italic;
+  font-family: "Cambria Math", "Times New Roman", serif;
+  color: #7a8396;
+  font-size: 14px;
+}
+
+.formula .val {
+  padding-left: 10px;
+  border-left: 1px solid #e1e5eb;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-family: var(--font-page);
+}
+
+table.grid {
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: var(--font-page);
+  font-size: 13px;
+  background: #fff;
+}
+
+table.grid th {
+  height: 24px;
+  background: #f3f5f8;
+  color: #5a6372;
+  font-weight: 400;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  border: 1px solid #dfe3ea;
+  text-align: center;
+}
+
+table.grid th.on {
+  background: #dce7fb;
+  color: #1f48b5;
+  font-weight: 600;
+}
+
+table.grid td {
+  height: 27px;
+  padding: 0 8px;
+  border: 1px solid #e6e9ee;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table.grid td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+table.grid td.sel { background: #edf3fe; }
+
+.sheettabs {
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding-left: 46px;
+  background: #f3f5f8;
+  border-top: 1px solid #e1e5eb;
+  font-size: 12px;
+}
+
+.sheettabs span {
+  padding: 5px 16px;
+  background: #fff;
+  border: 1px solid #e1e5eb;
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  color: #1f48b5;
+  font-weight: 600;
+}
+
+/* ---------- キー表示 ---------- */
+.keys {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(6, 22, 70, 0.30);
+  z-index: 40;
+}
+
+.keys kbd {
+  display: inline-block;
+  min-width: 34px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  border: 1px solid #cfd6e2;
+  border-bottom-width: 3px;
+  background: #f7f9fc;
+  font: 600 15px var(--font-ui);
+  text-align: center;
+  color: var(--ink);
+}
+
+.keys .plus { color: var(--ink-3); font-weight: 400; }
+
+.keys .arrow {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-3));
+  margin-left: 2px;
+}
+
+/* =========================================================
+   テキストエディタ（汎用・ダーク）
+   ========================================================= */
+.editor {
+  background: #1e2430;
+  color: #d5dbe6;
+}
+
+.editor .titlebar {
+  background: #171c26;
+  color: #c9d1de;
+  border-bottom: 1px solid #0f131a;
+  padding-left: 0;
+}
+
+.editor .ftab {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  background: #1e2430;
+  border-top: 2px solid var(--brand-1);
+  font-size: 12px;
+  color: #e6eaf2;
+}
+
+.editor .code {
+  display: flex;
+  padding: 16px 0 18px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 27px;
+}
+
+.editor .gutter {
+  width: 46px;
+  padding-right: 14px;
+  text-align: right;
+  color: #586174;
+  flex: none;
+}
+
+.editor .lines { white-space: pre; padding-left: 8px; }
+
+.editor .p { color: #6f7b93; }
+.editor .h { color: #f1f4f9; font-weight: 700; }
+.editor .s { color: #8db6ff; }
+.editor .n { color: #9fd0b0; }
+
+.editor .caret {
+  display: inline-block;
+  width: 2px;
+  height: 19px;
+  background: #e6eaf2;
+  margin-left: 1px;
+  vertical-align: -4px;
+}
+
+.editor .status {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 14px;
+  background: #171c26;
+  border-top: 1px solid #0f131a;
+  color: #8e98ab;
+  font-size: 11.5px;
+}

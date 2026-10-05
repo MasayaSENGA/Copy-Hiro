@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>screenshot-2 Excel・スプレッドシートにそのまま貼り付け</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .scene { position: absolute; }
+  .zoom { zoom: 1.2; position: relative; }
+  .scene.browser-pos { left: 48px; top: 186px; }
+  .scene.sheet-pos { left: 652px; top: 380px; z-index: 5; }
+  .win.browser { position: relative; width: 600px; height: 560px; }
+  .page { height: 477px; padding: 18px 26px 0; }
+  .page .lead { margin-bottom: 14px; }
+  .win.sheet { position: relative; width: 492px; }
+
+  /* 貼り付け直後の選択範囲 A1:D7 */
+  table.grid td.t { border-top: 2px solid #2b63d9; }
+  table.grid td.b { border-bottom: 2px solid #2b63d9; }
+  table.grid td.l { border-left: 2px solid #2b63d9; }
+  table.grid td.r { border-right: 2px solid #2b63d9; }
+  table.grid td.act { background: #fff; }
+  table.grid td.fill { position: relative; }
+  table.grid td.fill::after {
+    content: ""; position: absolute; right: -5px; bottom: -5px;
+    width: 7px; height: 7px; background: #2b63d9; border: 1.5px solid #fff; z-index: 2;
+  }
+  .keys.paste { left: 846px; top: 318px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <span class="deco" style="width:560px;height:560px;left:-210px;top:-330px"></span>
+  <span class="deco" style="width:760px;height:760px;right:-300px;top:-420px"></span>
+
+  <header class="band">
+    <h1>Excel・スプレッドシートにそのまま貼り付け</h1>
+    <p class="sub">タブ区切りでコピーされるので、セルごとにきれいに分かれます</p>
+  </header>
+
+  <!-- コピー元のWebページ -->
+  <div class="scene browser-pos">
+    <div class="zoom">
+      <div class="win browser" data-title="9月の売上 | サンプルストア" data-host="shop.example.com" data-path="/reports/2026-09" data-fav="S">
+        <div class="page">
+          <h2>9月の商品別売上</h2>
+          <p class="lead">2026年9月1日〜30日の集計</p>
+          <div class="tbl-wrap">
+            <table class="data">
+              <thead>
+                <tr><th>商品名</th><th class="num">販売数</th><th class="num">売上（円）</th><th class="num">前年比</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>ステンレスボトル 500ml</td><td class="num">412</td><td class="num">1,021,760</td><td class="num">108.5%</td></tr>
+                <tr><td>陶器マグカップ</td><td class="num">356</td><td class="num">704,880</td><td class="num">96.2%</td></tr>
+                <tr><td>リネンハンドタオル</td><td class="num">528</td><td class="num">696,960</td><td class="num">112.4%</td></tr>
+                <tr><td>木製ハンガー 5本組</td><td class="num">187</td><td class="num">308,550</td><td class="num">101.3%</td></tr>
+                <tr><td>方眼ノート A5</td><td class="num">1,046</td><td class="num">460,240</td><td class="num">118.7%</td></tr>
+                <tr><td>ゲルインクボールペン</td><td class="num">1,820</td><td class="num">400,400</td><td class="num">99.1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="toast">テーブルをコピーしました！</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 貼り付け先（汎用の表計算ソフト） -->
+  <div class="scene sheet-pos">
+    <div class="zoom">
+      <div class="win sheet">
+        <div class="titlebar" data-title="売上集計 - 表計算"></div>
+        <div class="formula"><span class="namebox">A1</span><span class="fx">fx</span><span class="val">商品名</span></div>
+        <table class="grid">
+          <colgroup><col style="width:36px"><col style="width:156px"><col style="width:62px"><col style="width:88px"><col style="width:70px"><col style="width:80px"></colgroup>
+          <thead>
+            <tr><th></th><th class="on">A</th><th class="on">B</th><th class="on">C</th><th class="on">D</th><th>E</th></tr>
+          </thead>
+          <tbody>
+            <tr><th class="on">1</th><td class="t l act">商品名</td><td class="t sel">販売数</td><td class="t sel">売上（円）</td><td class="t r sel">前年比</td><td></td></tr>
+            <tr><th class="on">2</th><td class="l sel">ステンレスボトル 500ml</td><td class="num sel">412</td><td class="num sel">1,021,760</td><td class="num r sel">108.5%</td><td></td></tr>
+            <tr><th class="on">3</th><td class="l sel">陶器マグカップ</td><td class="num sel">356</td><td class="num sel">704,880</td><td class="num r sel">96.2%</td><td></td></tr>
+            <tr><th class="on">4</th><td class="l sel">リネンハンドタオル</td><td class="num sel">528</td><td class="num sel">696,960</td><td class="num r sel">112.4%</td><td></td></tr>
+            <tr><th class="on">5</th><td class="l sel">木製ハンガー 5本組</td><td class="num sel">187</td><td class="num sel">308,550</td><td class="num r sel">101.3%</td><td></td></tr>
+            <tr><th class="on">6</th><td class="l sel">方眼ノート A5</td><td class="num sel">1,046</td><td class="num sel">460,240</td><td class="num r sel">118.7%</td><td></td></tr>
+            <tr><th class="on">7</th><td class="l b sel">ゲルインクボールペン</td><td class="num b sel">1,820</td><td class="num b sel">400,400</td><td class="num b r sel fill">99.1%</td><td></td></tr>
+            <tr><th>8</th><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>9</th><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>10</th><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="keys paste"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>V</kbd><span>で貼り付け</span></div>
+</div>
+<script src="common.js"></script>
+</body>
+</html>

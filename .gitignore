@@ -1,0 +1,10 @@
+# scripts/package.ps1 が作るパッケージ（zip）
+dist/
+
+# Python のキャッシュ（"_" で始まる名前があると Chrome が拡張機能として読み込めない）
+__pycache__/
+
+# OS が自動で作るファイル
+.DS_Store
+Thumbs.db
+desktop.ini

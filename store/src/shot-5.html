@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>screenshot-5 シンプルで安心</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .cards {
+    position: absolute;
+    left: 92px;
+    right: 92px;
+    top: 196px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+  .card {
+    height: 264px;
+    background: #fff;
+    border-radius: 22px;
+    padding: 34px 38px 0;
+    color: var(--ink);
+    box-shadow:
+      0 0 0 1px rgba(10, 30, 80, 0.06),
+      0 4px 12px rgba(6, 22, 70, 0.10),
+      0 22px 48px rgba(6, 22, 70, 0.22);
+  }
+  .card .ic {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, var(--brand-1), var(--brand-3));
+    box-shadow: 0 6px 14px rgba(31, 72, 181, 0.30);
+  }
+  .card h3 {
+    margin: 24px 0 0;
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #14234a;
+    white-space: nowrap;
+  }
+  .card p {
+    margin: 12px 0 0;
+    font-size: 19px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <span class="deco" style="width:560px;height:560px;left:-210px;top:-330px"></span>
+  <span class="deco" style="width:760px;height:760px;right:-300px;top:-420px"></span>
+
+  <header class="band">
+    <h1>シンプルで安心</h1>
+    <p class="sub">必要な機能だけを、すっきりと。</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ic">
+        <!-- マウス（右ボタン） -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="9" y="4" width="18" height="28" rx="9" stroke="#fff" stroke-width="2.4"/>
+          <path d="M18 4v10H27V13a9 9 0 0 0-9-9z" fill="#fff"/>
+          <path d="M9 14h18" stroke="#fff" stroke-width="2.4"/>
+          <path d="M18 4v10" stroke="#fff" stroke-width="2.4"/>
+        </svg>
+      </div>
+      <h3>右クリックだけ・設定不要</h3>
+      <p>表の上で右クリックして、<br>メニューから選ぶだけでコピーできます。</p>
+    </div>
+
+    <div class="card">
+      <div class="ic">
+        <!-- 表 -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="5" y="7" width="26" height="22" rx="3.5" stroke="#fff" stroke-width="2.4"/>
+          <path d="M5 14h26M5 21.5h26M14 14v15" stroke="#fff" stroke-width="2.4"/>
+        </svg>
+      </div>
+      <h3>タブ区切り(TSV)とMarkdownに対応</h3>
+      <p>Excel・スプレッドシートにも、<br>Markdown対応のエディタにも。</p>
+    </div>
+
+    <div class="card">
+      <div class="ic">
+        <!-- 盾とチェック -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <path d="M18 4 7 8.5v8.2c0 7 4.6 12.4 11 15.3 6.4-2.9 11-8.3 11-15.3V8.5z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="m12.8 17.8 3.7 3.7 7-7.2" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <!-- プライバシー情報で「ウェブサイトのコンテンツ」を申告する前提のため「収集なし」とは書かない。
+           表は読み取るが端末内で処理するだけ、という事実だけを書く。 -->
+      <h3>データの外部送信なし</h3>
+      <p>表の読み取りと変換は端末内で完結し、<br>外部との通信やデータの保存は行いません。</p>
+    </div>
+
+    <div class="card">
+      <div class="ic">
+        <!-- 稲妻 -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <path d="M20.5 4 9 20h8l-2 12 12-16.5h-8.2z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>動作が軽い</h3>
+      <p>余計な機能のない、小さくシンプルなつくり。<br>コピーはメニューを選んだときだけ実行します。</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

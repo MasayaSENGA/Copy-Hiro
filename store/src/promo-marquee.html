@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>promo-marquee 1400x560</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .canvas.marquee {
+    width: 1400px;
+    height: 560px;
+    background:
+      radial-gradient(700px 480px at 0% 0%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 70%),
+      radial-gradient(800px 560px at 100% 100%, rgba(120, 170, 255, 0.28), rgba(120, 170, 255, 0) 70%),
+      linear-gradient(140deg, #13307e 0%, #1d47b0 50%, #2a62d8 100%);
+  }
+  .brand {
+    position: absolute;
+    left: 92px;
+    top: 0;
+    bottom: 0;
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .brand .row { display: flex; align-items: center; gap: 26px; }
+  .brand img {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 12px 22px rgba(4, 14, 50, 0.45)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.6));
+  }
+  .brand .name {
+    margin: 0;
+    font-size: 84px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+  }
+  .brand .tag {
+    margin: 34px 0 0;
+    font-size: 32px;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .brand .chips { display: flex; gap: 10px; margin-top: 26px; }
+  .brand .chips span {
+    flex: none;
+    white-space: nowrap;
+    padding: 7px 15px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .scene { position: absolute; left: 664px; top: 46px; }
+  .zoom { zoom: 1; position: relative; }
+  .win.browser { position: relative; width: 690px; height: 560px; }
+  .page { height: 477px; padding: 16px 28px 0; }
+  .page .row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px; }
+  .page .count { font-size: 12px; color: var(--ink-3); }
+  .cmenu.main { left: 104px; top: 207px; min-width: 300px; }
+  .cmenu.sub  { left: 400px; top: 373px; }
+</style>
+</head>
+<body>
+<div class="canvas marquee">
+  <span class="deco" style="width:520px;height:520px;left:-220px;top:-300px"></span>
+  <span class="deco" style="width:420px;height:420px;left:420px;bottom:-300px"></span>
+
+  <div class="brand">
+    <div class="row">
+      <img src="icon-art.png" alt="">
+      <p class="name">コピひろ</p>
+    </div>
+    <p class="tag">右クリックで、表をそのままコピー</p>
+    <div class="chips"><span>タブ区切り(TSV)</span><span>Markdown</span><span>設定不要</span><span>外部送信なし</span></div>
+  </div>
+
+  <div class="scene">
+    <div class="zoom">
+      <div class="win browser" data-title="商品一覧 | サンプルストア" data-host="shop.example.com" data-path="/products" data-fav="S">
+        <div class="page">
+          <div class="row"><h2>商品一覧</h2><span class="count">全 6 件</span></div>
+          <div class="tbl-wrap">
+            <table class="data">
+              <thead>
+                <tr><th>商品コード</th><th>商品名</th><th>カテゴリ</th><th class="num">価格（税込）</th><th class="num">在庫数</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="code">A-1001</td><td>ステンレスボトル 500ml</td><td>キッチン用品</td><td class="num">¥2,480</td><td class="num">32</td></tr>
+                <tr><td class="code">A-1002</td><td>陶器マグカップ</td><td>キッチン用品</td><td class="num">¥1,980</td><td class="num">21</td></tr>
+                <tr><td class="code">B-2001</td><td>リネンハンドタオル</td><td>日用品</td><td class="num">¥1,320</td><td class="num">58</td></tr>
+                <tr><td class="code">B-2002</td><td>木製ハンガー 5本組</td><td>日用品</td><td class="num">¥1,650</td><td class="num">40</td></tr>
+                <tr><td class="code">C-3001</td><td>方眼ノート A5</td><td>文房具</td><td class="num">¥440</td><td class="num">120</td></tr>
+                <tr><td class="code">C-3002</td><td>ゲルインクボールペン</td><td>文房具</td><td class="num">¥220</td><td class="num">300</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="cmenu main">
+          <div class="mi">戻る</div>
+          <div class="mi off">進む</div>
+          <div class="mi">再読み込み<span class="acc">Ctrl+R</span></div>
+          <div class="sep"></div>
+          <div class="mi">名前を付けて保存...<span class="acc">Ctrl+S</span></div>
+          <div class="mi">印刷...<span class="acc">Ctrl+P</span></div>
+          <div class="sep"></div>
+          <div class="mi hl"><img class="ico" src="icon-art.png" alt="">コピひろ<span class="chev"></span></div>
+          <div class="sep"></div>
+          <div class="mi">ページのソースを表示<span class="acc">Ctrl+U</span></div>
+          <div class="mi">検証</div>
+        </div>
+
+        <div class="cmenu sub">
+          <div class="mi hl">このテーブルをコピー</div>
+          <div class="mi">このテーブルをMarkdownでコピー</div>
+          <div class="mi">ページ上の全テーブルをコピー</div>
+          <div class="mi">ページ上の全テーブルをMarkdownでコピー</div>
+        </div>
+
+        <i class="cursor" style="left:596px;top:385px"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="common.js"></script>
+</body>
+</html>

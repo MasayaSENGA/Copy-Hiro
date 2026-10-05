@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>screenshot-4 ページ上の全テーブルをまとめてコピー</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .scene { position: absolute; left: 60px; top: 186px; }
+  .zoom { zoom: 1.2; position: relative; }
+  .win.browser { position: relative; width: 967px; height: 540px; }
+  .page { height: 457px; padding: 18px 28px 0; }
+  .page .lead { margin-bottom: 18px; }
+  .stores { display: flex; gap: 22px; }
+  .store h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .store h3::before {
+    content: "";
+    width: 4px;
+    height: 14px;
+    border-radius: 2px;
+    background: #5b6b8c;
+  }
+  .store table.data th, .store table.data td { padding: 8px 13px; }
+  .store table.data .rank { width: 44px; text-align: center; color: var(--ink-2); }
+  .store table.data th.rank { color: #3a4458; }
+  .store table.data .name { width: 170px; }
+  .store table.data .num { width: 64px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <span class="deco" style="width:560px;height:560px;left:-210px;top:-330px"></span>
+  <span class="deco" style="width:760px;height:760px;right:-300px;top:-420px"></span>
+
+  <header class="band">
+    <h1>ページ上の全テーブルをまとめてコピー</h1>
+    <p class="sub">「ページ上の全テーブルをコピー」を選ぶと、すべての表を一度にコピーできます</p>
+  </header>
+
+  <div class="scene">
+    <div class="zoom">
+      <div class="win browser" data-title="店舗別ランキング | サンプルストア" data-host="shop.example.com" data-path="/reports/ranking" data-fav="S">
+        <div class="page">
+          <h2>店舗別 売れ筋ランキング（9月）</h2>
+          <p class="lead">各店舗の販売数トップ5</p>
+          <div class="stores">
+            <section class="store">
+              <h3>本店</h3>
+              <div class="tbl-wrap">
+                <table class="data">
+                  <thead><tr><th class="rank">順位</th><th class="name">商品名</th><th class="num">販売数</th></tr></thead>
+                  <tbody>
+                    <tr><td class="rank">1</td><td>ステンレスボトル 500ml</td><td class="num">128</td></tr>
+                    <tr><td class="rank">2</td><td>陶器マグカップ</td><td class="num">96</td></tr>
+                    <tr><td class="rank">3</td><td>リネンハンドタオル</td><td class="num">84</td></tr>
+                    <tr><td class="rank">4</td><td>方眼ノート A5</td><td class="num">71</td></tr>
+                    <tr><td class="rank">5</td><td>木製ハンガー 5本組</td><td class="num">45</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="store">
+              <h3>駅前店</h3>
+              <div class="tbl-wrap">
+                <table class="data">
+                  <thead><tr><th class="rank">順位</th><th class="name">商品名</th><th class="num">販売数</th></tr></thead>
+                  <tbody>
+                    <tr><td class="rank">1</td><td>方眼ノート A5</td><td class="num">142</td></tr>
+                    <tr><td class="rank">2</td><td>ゲルインクボールペン</td><td class="num">131</td></tr>
+                    <tr><td class="rank">3</td><td>ステンレスボトル 500ml</td><td class="num">117</td></tr>
+                    <tr><td class="rank">4</td><td>陶器マグカップ</td><td class="num">66</td></tr>
+                    <tr><td class="rank">5</td><td>リネンハンドタオル</td><td class="num">52</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="store">
+              <h3>東口店</h3>
+              <div class="tbl-wrap">
+                <table class="data">
+                  <thead><tr><th class="rank">順位</th><th class="name">商品名</th><th class="num">販売数</th></tr></thead>
+                  <tbody>
+                    <tr><td class="rank">1</td><td>リネンハンドタオル</td><td class="num">109</td></tr>
+                    <tr><td class="rank">2</td><td>陶器マグカップ</td><td class="num">101</td></tr>
+                    <tr><td class="rank">3</td><td>方眼ノート A5</td><td class="num">88</td></tr>
+                    <tr><td class="rank">4</td><td>ステンレスボトル 500ml</td><td class="num">73</td></tr>
+                    <tr><td class="rank">5</td><td>ゲルインクボールペン</td><td class="num">64</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+          <div class="toast">3 個のテーブルをコピーしました！</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="common.js"></script>
+</body>
+</html>

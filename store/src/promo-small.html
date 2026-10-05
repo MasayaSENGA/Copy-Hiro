@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>promo-small 440x280</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .canvas.promo {
+    width: 440px;
+    height: 280px;
+    background:
+      radial-gradient(360px 260px at 0% 0%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 70%),
+      linear-gradient(140deg, #13307e 0%, #1d47b0 52%, #2a62d8 100%);
+  }
+  .lockup {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding-bottom: 4px;
+  }
+  .lockup img {
+    width: 112px;
+    height: 112px;
+    filter: drop-shadow(0 10px 18px rgba(4, 14, 50, 0.45)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.6));
+  }
+  .lockup .name {
+    margin: 0;
+    font-size: 56px;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+  }
+  .lockup .tag {
+    margin: 12px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.92);
+  }
+</style>
+</head>
+<body>
+<div class="canvas promo">
+  <span class="deco" style="width:300px;height:300px;right:-120px;top:-150px"></span>
+  <span class="deco" style="width:220px;height:220px;left:-110px;bottom:-130px"></span>
+  <div class="lockup">
+    <img src="icon-art.png" alt="">
+    <div>
+      <p class="name">コピひろ</p>
+      <p class="tag">右クリックで表をコピー</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

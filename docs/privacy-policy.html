@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Chrome 拡張機能「コピひろ」（Copy-Hiro）のプライバシーポリシーです。Privacy policy of the Chrome extension Copy-Hiro.">
+<title>コピひろ プライバシーポリシー / Copy-Hiro Privacy Policy</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --surface: #ffffff;
+    --text: #1f2328;
+    --muted: #5b636d;
+    --border: #dfe2e6;
+    --accent: #0b6bcb;
+    --accent-soft: #e8f1fb;
+    --code-bg: #f1f3f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181c;
+      --surface: #1d2126;
+      --text: #e6e8eb;
+      --muted: #a0a8b2;
+      --border: #343a42;
+      --accent: #6cb4ff;
+      --accent-soft: #1b2a3b;
+      --code-bg: #262b31;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    line-break: strict;
+    overflow-wrap: break-word;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 24px 16px 64px; }
+  .lang-nav {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    font-size: 0.875rem;
+  }
+  .lang-nav a {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--surface);
+    text-decoration: none;
+  }
+  .lang-nav a:hover, .lang-nav a:focus-visible { border-color: var(--accent); color: var(--accent); }
+  article { scroll-margin-top: 16px; }
+  article + article { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+  h1 { font-size: 1.75rem; line-height: 1.4; margin: 0 0 8px; letter-spacing: 0.01em; }
+  h2 { font-size: 1.25rem; line-height: 1.5; margin: 40px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.05rem; line-height: 1.5; margin: 28px 0 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.4em; }
+  li + li { margin-top: 6px; }
+  a { color: var(--accent); }
+  .date { color: var(--muted); font-size: 0.9375rem; margin-bottom: 24px; }
+  .note { color: var(--muted); font-size: 0.9375rem; }
+  .summary {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px 20px 4px;
+    margin: 24px 0 8px;
+  }
+  .summary h2 { border-bottom: 0; margin-top: 16px; padding-bottom: 0; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.875em;
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    overflow-wrap: anywhere;
+  }
+  .perm { margin: 0 0 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow: hidden; }
+  .perm div { padding: 12px 16px; }
+  .perm div + div { border-top: 1px solid var(--border); }
+  .perm dt { font-weight: 600; margin-bottom: 2px; }
+  .perm dd { margin: 0; color: var(--text); }
+  .end-date { margin-top: 32px; color: var(--muted); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.875rem; text-align: center; }
+  footer a { color: var(--muted); }
+  @media print {
+    .lang-nav, footer { display: none; }
+    article + article { break-before: page; border-top: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="lang-nav" aria-label="言語 / Language">
+  <a href="#ja" lang="ja" hreflang="ja">日本語</a>
+  <a href="#en" lang="en" hreflang="en">English</a>
+</nav>
+
+<main>
+
+<article id="ja" lang="ja">
+  <h1>コピひろ プライバシーポリシー</h1>
+  <p class="date">制定日：2026年10月5日</p>
+
+  <p>Chrome 拡張機能「コピひろ」（以下「本拡張機能」）が取り扱う情報と、その取り扱い方法について説明します。本拡張機能は、表をコピーするために必要な最小限の情報だけを、お使いの端末内で取り扱います。</p>
+
+  <section class="summary" aria-labelledby="ja-summary">
+    <h2 id="ja-summary">概要</h2>
+    <ul>
+      <li>本拡張機能が扱うのは、ページ上の表（テーブル）のテキストと、どの表を右クリックしたかを特定するための情報だけです。</li>
+      <li>表のテキストを読み取るのは、右クリックメニューからコピーの項目を選んだときだけです。</li>
+      <li>読み取ったテキストはお使いの端末内で変換し、クリップボードに書き込むだけです。保存、外部への送信、第三者への提供は一切行いません。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>1. 対象</h2>
+    <p>本ポリシーは、Chrome ウェブストアで公開している Chrome 拡張機能「コピひろ」（Copy-Hiro）に適用されます。本拡張機能は、Chrome で表示しているウェブページと、ページに埋め込まれたフレーム（iframe など。about:blank や srcdoc で作られたフレームを含みます）の中で動作します。本拡張機能の「ファイルの URL へのアクセスを許可する」を有効にした場合は、端末内のファイルを開いたページも含みます。</p>
+    <p>Chrome の設定画面（chrome:// で始まるページ）や Chrome ウェブストア、PDF ビューアなど、Chrome が拡張機能の動作を認めていないページでは動作しません。これらのページでは、メニューの項目を選んでも何も起こりません。</p>
+  </section>
+
+  <section>
+    <h2>2. 取り扱う情報</h2>
+    <p>本拡張機能が取り扱う情報は、次の 3 つだけです。</p>
+
+    <h3>(1) 表のテキスト</h3>
+    <p>右クリックメニューで選んだ項目に応じて、次の表の各セルのテキスト（文字だけ）を読み取ります。</p>
+    <ul>
+      <li>「このテーブルをコピー」「このテーブルをMarkdownでコピー」：右クリックした表</li>
+      <li>「ページ上の全テーブルをコピー」「ページ上の全テーブルをMarkdownでコピー」：右クリックしたページにあるすべての表。ページに埋め込まれたフレームの中で右クリックした場合は、そのフレームにあるすべての表です（ページとフレームの表をまとめて読み取ることはありません）。画面に表示されていない表も含まれます。</li>
+    </ul>
+    <p>表のテキストを読み取るのは、これらの項目を選んだときだけです。表に個人情報などが含まれている場合も、そのテキストはコピーのためだけに端末内で扱われます。</p>
+
+    <h3>(2) 右クリックした要素</h3>
+    <p>どの表を右クリックしたかを特定するため、ページ上で右クリックが行われるたびに、右クリックした位置にある要素（その位置が表の中であれば、その表）を示す情報を、そのページ（フレーム）のメモリ上に直近の 1 件だけ保持します。この時点では、表やページのテキストは読み取りません。この情報は次に右クリックしたときに置き換わり、ページを閉じたり再読み込みしたりすると破棄されます。</p>
+
+    <h3>(3) メニューの項目を選んだときの情報</h3>
+    <p>メニューの項目を選ぶと、Chrome から本拡張機能に、その操作に関する情報が渡されます。本拡張機能が使うのは、そのうち次の情報だけです。</p>
+    <ul>
+      <li>選ばれた項目と、右クリックしたタブ・フレームを識別する番号：コピーの指示を、右クリックしたフレームに届けるため</li>
+      <li>右クリックしたフレームの URL が「http://」または「https://」で始まるかどうか：フレームの中で右クリックしてコピーの指示を届けられなかったときに、ページの再読み込みを案内するかどうかを決めるため（このときだけ確認します）</li>
+    </ul>
+    <p>これらの情報は、その場で使うだけで、記録も送信もしません。</p>
+
+    <h3>取り扱わない情報</h3>
+    <p>上記以外の情報、たとえばページの URL（上記 (3) の確認を除きます）やタイトル、表以外のページの内容、閲覧履歴、Cookie、位置情報、アカウント情報などを、本拡張機能が利用、記録、送信することはありません。</p>
+  </section>
+
+  <section>
+    <h2>3. 利用目的</h2>
+    <ul>
+      <li>表のテキスト：タブ区切りテキスト（TSV）または Markdown 形式に変換し、クリップボードに書き込むためだけに使用します。</li>
+      <li>右クリックした要素：コピーの対象となる表を特定するためだけに使用します。</li>
+      <li>メニューの項目を選んだときの情報：コピーの指示を右クリックしたフレームに届けることと、ページの再読み込みを案内するかどうかを決めることだけに使用します。</li>
+    </ul>
+    <p>本拡張機能によるこれらの情報の使用は、Chrome ウェブストアのユーザーデータに関するポリシー（Chrome Web Store User Data Policy）に、Limited Use（使用の制限）の要件も含めて準拠しています。</p>
+  </section>
+
+  <section>
+    <h2>4. 保存・送信・第三者提供</h2>
+    <ul>
+      <li>処理はすべて、お使いの端末のブラウザ内で完結します。表のテキストは、右クリックしたページ（フレーム）の中で変換してクリップボードに書き込みます。本拡張機能のバックグラウンドで動く処理にも送りません。</li>
+      <li>本拡張機能は外部との通信を一切行いません。情報を開発者や第三者のサーバーへ送信することはありません。</li>
+      <li>情報を保存しません。拡張機能のストレージ、Cookie、ローカルストレージなどの保存領域は使用していません。</li>
+      <li>情報を第三者に提供、販売、共有することはありません。</li>
+      <li>アクセス解析、広告、トラッキングの仕組みは組み込んでいません。</li>
+      <li>外部からプログラム（リモートコード）を読み込んで実行することはありません。</li>
+    </ul>
+    <p>なお、Chrome ウェブストアは、インストール数などの集計された統計情報を、開発者向けの管理画面で提供しています。これは Google が Chrome ウェブストアの運営の中で集計するもので、本拡張機能が収集・送信するものではありません。</p>
+  </section>
+
+  <section>
+    <h2>5. クリップボードについて</h2>
+    <ul>
+      <li>コピーの項目を選ぶと、変換した表のテキストがクリップボードに書き込まれます。それまでクリップボードにあった内容は上書きされます。</li>
+      <li>本拡張機能がクリップボードの内容を読み取ることはありません。</li>
+      <li>クリップボードに書き込まれた内容は、通常のコピー操作と同じく、お使いの端末のクリップボードに残ります。お使いの OS のクリップボード履歴や同期の機能を有効にしている場合は、その機能の設定に従って保存・同期されることがあります。貼り付けた後の取り扱いは、貼り付け先のアプリケーションやサービスの方針に従います。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. ページの表示について</h2>
+    <p>コピーの結果（コピーできなかった場合を含みます）や、操作をやり直す必要があることを知らせるため、ページの右上（フレームの中で操作した場合は、そのフレームの右上）に通知を約 3 秒間表示します。ただし、フレームの中で右クリックし、そのフレームで本拡張機能が動作できなかった場合は、ページの再読み込みを案内する通知を、ページ全体の右上に表示します。それ以外に、ページの内容を変更することはありません。</p>
+  </section>
+
+  <section>
+    <h2>7. 権限について</h2>
+    <p>本拡張機能が使用する権限と、その用途は次のとおりです。</p>
+    <dl class="perm">
+      <div>
+        <dt><code>contextMenus</code></dt>
+        <dd>右クリックメニューにコピーの項目（4 項目）を追加するため</dd>
+      </div>
+      <div>
+        <dt><code>clipboardWrite</code></dt>
+        <dd>変換したテキストをクリップボードに書き込むため（読み取りには使用しません）</dd>
+      </div>
+      <div>
+        <dt><code>activeTab</code></dt>
+        <dd>本拡張機能のインストールや更新より前から開いていたタブなど、コピー処理用のスクリプトがまだ読み込まれていないページで、メニューの項目を選んだときに、そのタブへ一時的にアクセスし、スクリプトを読み込み直すため。一時的にアクセスできるのは、タブに表示しているページと同じオリジン（プロトコル・ドメイン・ポート番号が同じ範囲）だけです。オリジンが異なるフレーム（別のサイトから埋め込まれたフレームなど）には読み込み直せないため、その場合はページの再読み込みを案内します（再読み込みすると、スクリプトは自動で読み込まれます）</dd>
+      </div>
+      <div>
+        <dt><code>scripting</code></dt>
+        <dd>上記の読み込み直しを行うため（本拡張機能に同梱されたスクリプトだけを、必要なフレームにだけ読み込みます。同じフレームに重ねて読み込まれた場合、2 回目以降は何もしません）</dd>
+      </div>
+      <div>
+        <dt>すべてのページでのスクリプトの実行（<code>content_scripts</code>：<code>&lt;all_urls&gt;</code>、すべてのフレーム、about:blank のフレームを含む）</dt>
+        <dd>どのサイトの表でも、またページに埋め込まれたフレーム（about:blank や srcdoc で作られたフレームを含みます）の中の表でも、右クリックした表を特定できるようにするため</dd>
+      </div>
+    </dl>
+    <p>すべてのページでスクリプトを実行する設定があるため、Chrome はインストール時に、すべてのウェブサイト上のデータを読み取り・変更できる旨の警告を表示します。また <code>clipboardWrite</code> のため、コピー＆ペーストするデータを変更できる旨の警告も表示します（正確な文言は Chrome のバージョンや言語によって異なります）。本拡張機能が実際に行う処理は、本ポリシーに記載した範囲に限られます。</p>
+  </section>
+
+  <section>
+    <h2>8. ポリシーの改定</h2>
+    <p>本ポリシーは、本拡張機能の機能変更や、関連する法令・規約の変更に応じて改定することがあります。改定した場合は、このページの内容と改定日を更新してお知らせします。取り扱う情報の範囲や利用方法を変更する場合は、その変更を含むバージョンを公開する前に、このページと Chrome ウェブストアの掲載情報でお知らせします。</p>
+  </section>
+
+  <section>
+    <h2 id="ja-contact">9. お問い合わせ</h2>
+    <p>本ポリシーおよび本拡張機能に関するお問い合わせは、次の連絡先までお寄せください。Chrome ウェブストアの本拡張機能のページに表示されている開発者の連絡先からもお問い合わせいただけます。</p>
+    <!-- 連絡先がメールアドレスなら <a href="mailto:（アドレス）">（アドレス）</a>、フォームなら <a href="（フォームの URL）">（フォームの URL）</a> と書くとリンクになります。英語版（9. Contact）と案内ページ（index.html）の連絡先も同じ内容にそろえてください。 -->
+    <ul>
+      <li>運営者：【要記入: パブリッシャー名（個人名または会社名）】</li>
+      <li>連絡先：【要記入: 公開してよい問い合わせ用メールアドレスまたはフォームのURL】</li>
+    </ul>
+    <p>お問い合わせの際にいただいたメールアドレスなどの情報は、お問い合わせへの回答のためだけに使用します。</p>
+  </section>
+
+  <p class="end-date">制定日：2026年10月5日</p>
+</article>
+
+<article id="en" lang="en">
+  <h1>Copy-Hiro Privacy Policy</h1>
+  <p class="date">Effective date: October 5, 2026</p>
+
+  <p>This policy explains what information the Chrome extension "Copy-Hiro" (<span lang="ja">コピひろ</span>, "the extension") handles and how. The extension handles only the minimum information needed to copy tables, and only on your device.</p>
+  <p class="note">This English version is a translation of the Japanese original. If the two versions differ, the Japanese version prevails.</p>
+
+  <section class="summary" aria-labelledby="en-summary">
+    <h2 id="en-summary">Summary</h2>
+    <ul>
+      <li>The only data the extension handles is the text of tables on the page and the information needed to identify which table you right-clicked.</li>
+      <li>It reads table text only when you choose a copy item from the right-click menu.</li>
+      <li>The text is converted on your device and written to your clipboard. It is never stored, sent anywhere, or shared with anyone.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>1. Scope</h2>
+    <p>This policy applies to the Chrome extension "Copy-Hiro" (<span lang="ja">コピひろ</span>) published on the Chrome Web Store. The extension works on web pages displayed in Chrome and inside frames embedded in them (such as iframes, including frames created as about:blank or with srcdoc). If you turn on "Allow access to file URLs" for the extension, this also includes pages that show local files on your device.</p>
+    <p>The extension does not work on pages where Chrome does not allow extensions to run, such as Chrome's settings pages (pages whose address starts with chrome://), the Chrome Web Store, and the PDF viewer. On those pages, choosing a menu item does nothing.</p>
+  </section>
+
+  <section>
+    <h2>2. Information the extension handles</h2>
+    <p>The extension handles only the following three kinds of information.</p>
+
+    <h3>(1) Table text</h3>
+    <p>Depending on the menu item you choose, the extension reads the text (text only) of each cell of the following tables:</p>
+    <ul>
+      <li><span lang="ja">「このテーブルをコピー」</span> (Copy this table) and <span lang="ja">「このテーブルをMarkdownでコピー」</span> (Copy this table as Markdown): the table you right-clicked.</li>
+      <li><span lang="ja">「ページ上の全テーブルをコピー」</span> (Copy all tables on the page) and <span lang="ja">「ページ上の全テーブルをMarkdownでコピー」</span> (Copy all tables on the page as Markdown): all tables on the page you right-clicked. If you right-clicked inside a frame embedded in the page, all tables in that frame (tables in the page and in its frames are never read together). Tables that are not visible on screen are included.</li>
+    </ul>
+    <p>Table text is read only when you choose one of these items. Even if a table contains personal information, its text is handled on your device solely for copying.</p>
+
+    <h3>(2) The element you right-clicked</h3>
+    <p>To identify which table you right-clicked, each time you right-click on a page the extension keeps one piece of information in the memory of that page (or frame): which element is at the position you right-clicked most recently (or, if that position is inside a table, which table). No table or page text is read at that point. This information is replaced the next time you right-click, and it is discarded when you close or reload the page.</p>
+
+    <h3>(3) Information about the menu item you choose</h3>
+    <p>When you choose a menu item, Chrome passes information about that action to the extension. Of that information, the extension uses only the following:</p>
+    <ul>
+      <li>Which item you chose, and the numbers that identify the tab and frame you right-clicked: to deliver the copy instruction to the frame you right-clicked.</li>
+      <li>Whether the URL of the frame you right-clicked starts with "http://" or "https://": to decide whether to show a notice asking you to reload the page, when you right-clicked inside a frame and the copy instruction could not be delivered to it (this is checked only in that case).</li>
+    </ul>
+    <p>This information is used only at that moment; it is neither recorded nor transmitted.</p>
+
+    <h3>Information the extension does not handle</h3>
+    <p>The extension does not use, record, or transmit any other information, such as page URLs (except for the check described in (3)) or titles, page content other than tables, browsing history, cookies, location, or account information.</p>
+  </section>
+
+  <section>
+    <h2>3. How the information is used</h2>
+    <ul>
+      <li>Table text: used only to convert it to tab-separated text (TSV) or Markdown and write it to the clipboard.</li>
+      <li>The right-clicked element: used only to identify the table to copy.</li>
+      <li>Information about the menu item you choose: used only to deliver the copy instruction to the frame you right-clicked and to decide whether to show a notice asking you to reload the page.</li>
+    </ul>
+    <p>The extension's use of this information complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+  </section>
+
+  <section>
+    <h2>4. Storage, transmission, and sharing</h2>
+    <ul>
+      <li>All processing takes place inside the browser on your device. Table text is converted and written to the clipboard within the page (or frame) you right-clicked; it is not passed even to the extension's background process.</li>
+      <li>The extension makes no network requests. It never sends information to the developer's servers or to any third party.</li>
+      <li>The extension stores no information. It does not use extension storage, cookies, local storage, or any other storage.</li>
+      <li>The extension never provides, sells, or shares information with third parties.</li>
+      <li>The extension contains no analytics, advertising, or tracking.</li>
+      <li>The extension never loads or runs code from outside its package (remote code).</li>
+    </ul>
+    <p>Note that the Chrome Web Store provides developers with aggregated statistics, such as the number of installs, in its developer dashboard. These are compiled by Google as part of operating the Chrome Web Store; they are not collected or sent by the extension.</p>
+  </section>
+
+  <section>
+    <h2>5. Clipboard</h2>
+    <ul>
+      <li>When you choose a copy item, the converted table text is written to the clipboard, replacing whatever it contained before.</li>
+      <li>The extension never reads the contents of the clipboard.</li>
+      <li>As with any ordinary copy, the copied text stays on your device's clipboard. If you have turned on your operating system's clipboard history or sync features, the text may be saved or synced according to those settings. Once you paste it, it is handled according to the policies of the app or service you paste it into.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Changes to the page</h2>
+    <p>To report the result of a copy (including when nothing could be copied) or to tell you that you need to try again, the extension shows a notice in the top-right corner of the page (or of the frame, if you used it inside a frame) for about 3 seconds. If you right-clicked inside a frame where the extension could not run, a notice asking you to reload the page is shown in the top-right corner of the whole page instead. The extension makes no other changes to the page.</p>
+  </section>
+
+  <section>
+    <h2>7. Permissions</h2>
+    <p>The extension uses the following permissions for the following purposes.</p>
+    <dl class="perm">
+      <div>
+        <dt><code>contextMenus</code></dt>
+        <dd>To add the four copy items to the right-click menu</dd>
+      </div>
+      <div>
+        <dt><code>clipboardWrite</code></dt>
+        <dd>To write the converted text to the clipboard (never used to read it)</dd>
+      </div>
+      <div>
+        <dt><code>activeTab</code></dt>
+        <dd>In tabs where the copy script is not loaded yet, such as tabs that were already open before the extension was installed or updated, to access the tab temporarily when you choose a menu item, so that the script can be loaded into it again. This temporary access covers only the same origin (the same protocol, domain, and port) as the page shown in the tab. Because the script cannot be loaded again into frames from a different origin (such as frames embedded from other sites), the extension then shows a notice asking you to reload the page (after a reload, the script is loaded automatically)</dd>
+      </div>
+      <div>
+        <dt><code>scripting</code></dt>
+        <dd>To load that script again (only the script bundled with the extension is used, and only into the frames that need it; if it is loaded into the same frame more than once, the extra copies do nothing)</dd>
+      </div>
+      <div>
+        <dt>Running a script on all pages (<code>content_scripts</code>: <code>&lt;all_urls&gt;</code>, all frames, including about:blank frames)</dt>
+        <dd>To identify the table you right-clicked on any site, including tables inside frames embedded in a page (including frames created as about:blank or with srcdoc)</dd>
+      </div>
+    </dl>
+    <p>Because the extension runs a script on all pages, Chrome warns at installation that the extension can read and change your data on all websites. Because of <code>clipboardWrite</code>, Chrome also warns that the extension can modify data you copy and paste. (The exact wording depends on the Chrome version and language.) What the extension actually does is limited to what this policy describes.</p>
+  </section>
+
+  <section>
+    <h2>8. Changes to this policy</h2>
+    <p>This policy may be revised when the extension's features change or when relevant laws or rules change. When it is revised, this page and its revision date will be updated. If the scope or use of the information the extension handles changes, the change will be announced on this page and in the Chrome Web Store listing before the version that includes it is published.</p>
+  </section>
+
+  <section>
+    <h2 id="en-contact">9. Contact</h2>
+    <p>For questions about this policy or the extension, please use the contact details below. You can also use the developer contact information shown on the extension's Chrome Web Store page.</p>
+    <ul>
+      <li>Operator: 【要記入: パブリッシャー名（個人名または会社名）】</li>
+      <li>Contact: 【要記入: 公開してよい問い合わせ用メールアドレスまたはフォームのURL】</li>
+    </ul>
+    <p>Any information you send with your inquiry, such as your email address, is used only to reply to you.</p>
+  </section>
+
+  <p class="end-date">Effective date: October 5, 2026</p>
+</article>
+
+</main>
+
+<footer>
+  <a href="index.html" lang="ja">コピひろ トップページ</a> ・ <a href="#ja" lang="ja">日本語</a> ・ <a href="#en" lang="en">English</a>
+</footer>
+
+</div>
+</body>
+</html>
