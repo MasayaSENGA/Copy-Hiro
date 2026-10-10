@@ -1,6 +1,12 @@
 # scripts/package.ps1 が作るパッケージ（zip）
 dist/
 
+# Chrome ウェブストアの掲載作業用の資料（手元だけで管理し、リポジトリには入れない）
+store/README.md
+store/listing.md
+store/privacy-practices.md
+store/test-instructions.md
+
 # Python のキャッシュ（"_" で始まる名前があると Chrome が拡張機能として読み込めない）
 __pycache__/
 
